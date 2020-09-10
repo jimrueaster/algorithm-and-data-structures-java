@@ -1,22 +1,52 @@
 package xyz.jekd.onedirectionlinkedlist;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OneDirectionLinkedListTest {
 
-    @Test
-    public void testAdd() {
+    OneDirectionLinkedList emptyList;
+    OneDirectionLinkedList notEmptyList;
+
+    private OneDirectionLinkedList generateEmptyList() {
+        return new OneDirectionLinkedList();
+    }
+
+    private OneDirectionLinkedList generateNotEmptyList() {
         OneDirectionNode node1 = new OneDirectionNode("aa", null);
         OneDirectionNode node2 = new OneDirectionNode("bb", null);
-        OneDirectionLinkedList ll = new OneDirectionLinkedList();
-        ll.add(node1);
-        ll.add(node2);
+        OneDirectionLinkedList result = new OneDirectionLinkedList();
+        result.add(node1);
+        result.add(node2);
 
-        assertEquals(Arrays.asList("aa", "bb"), ll.toList());
-        assertEquals(2, ll.getSize());
+        return result;
+    }
+
+    @BeforeEach
+    public void generateLists() {
+
+        emptyList = generateEmptyList();
+        notEmptyList = generateNotEmptyList();
+    }
+
+    @Test
+    public void testIsEmpty() {
+        assertTrue(emptyList.isEmpty());
+    }
+
+    @Test
+    void testIsNotEmpty() {
+        assertFalse(notEmptyList.isEmpty());
+    }
+
+    @Test
+    public void testAdd() {
+
+        assertEquals(Arrays.asList("aa", "bb"), notEmptyList.toList());
+        assertEquals(2, notEmptyList.getSize());
     }
 }

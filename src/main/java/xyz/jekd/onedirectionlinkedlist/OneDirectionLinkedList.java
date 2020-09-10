@@ -20,6 +20,10 @@ public class OneDirectionLinkedList {
         size++;
     }
 
+    public Boolean isEmpty(){
+        return 0 == size;
+    }
+
     public List<String> toList() {
         LinkedList<String> result = new LinkedList<>();
 
