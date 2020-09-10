@@ -17,5 +17,6 @@ public class OneDirectionLinkedListTest {
         ll.add(node2);
 
         assertEquals(Arrays.asList("aa", "bb"), ll.toList());
+        assertEquals(2, ll.getSize());
     }
 }
