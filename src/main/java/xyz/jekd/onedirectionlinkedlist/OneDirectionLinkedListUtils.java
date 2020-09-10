@@ -2,7 +2,7 @@ package xyz.jekd.onedirectionlinkedlist;
 
 import java.util.LinkedList;
 
-public class OneDirectionLinkedList {
+public class OneDirectionLinkedListUtils {
 
     public static OneDirectionNode generateLinkedList() {
         OneDirectionNode result = new OneDirectionNode(null, null);

@@ -7,14 +7,14 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class OneDirectionLinkedListTest {
+public class OneDirectionLinkedListUtilTest {
 
     @Test
     public void testTraverseOneDirectionLinkedList() {
 
-        OneDirectionNode head = OneDirectionLinkedList.generateLinkedList();
+        OneDirectionNode head = OneDirectionLinkedListUtils.generateLinkedList();
 
-        List<String> linkedList = OneDirectionLinkedList.traverseOneDirectionLinkedList(head);
+        List<String> linkedList = OneDirectionLinkedListUtils.traverseOneDirectionLinkedList(head);
 
         assertEquals(Arrays.asList("aa", "bb", "cc"), linkedList);
     }
