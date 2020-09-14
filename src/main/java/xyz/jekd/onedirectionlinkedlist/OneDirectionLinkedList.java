@@ -20,6 +20,29 @@ public class OneDirectionLinkedList {
         size++;
     }
 
+    public void removeLast() {
+
+        OneDirectionNode node = head;
+        if (null == head.getNext()) {
+            throw new RuntimeException("empty list");
+        }
+        for (; ; ) {
+            if (null == node) {
+                throw new RuntimeException("node is null");
+            }
+            OneDirectionNode nextNode = node.getNext();
+
+            if (null == nextNode.getNext()) {
+                node.setNext(null);
+                break;
+            }
+
+            node = node.getNext();
+        }
+
+        size--;
+    }
+
     public Boolean isEmpty(){
         return 0 == size;
     }
