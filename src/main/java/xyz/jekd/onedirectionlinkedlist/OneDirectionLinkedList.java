@@ -20,6 +20,28 @@ public class OneDirectionLinkedList {
         size++;
     }
 
+    public void insertToIndex(OneDirectionNode aOneDirectionNode, int anIndex) {
+        int i = 0;
+        OneDirectionNode node = head;
+        for (; ; ) {
+            if (null == node) {
+                break;
+            }
+
+            if (i == anIndex) {
+                OneDirectionNode prevNext = node.getNext();
+                node.setNext(aOneDirectionNode);
+                aOneDirectionNode.setNext(prevNext);
+                break;
+            }
+            node = node.getNext();
+            i++;
+        }
+        if (i != anIndex) {
+            throw new RuntimeException("index exceeded.");
+        }
+    }
+
     public void removeLast() {
 
         OneDirectionNode node = head;

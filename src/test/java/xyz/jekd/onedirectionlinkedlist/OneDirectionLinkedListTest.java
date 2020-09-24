@@ -64,4 +64,25 @@ public class OneDirectionLinkedListTest {
 
         assertThrows(RuntimeException.class, () -> emptyList.removeLast());
     }
+
+    @Test
+    public void test_insertToIndex__not_empty__middle(){
+        OneDirectionNode oneDirectionNode = new OneDirectionNode("cc", null);
+        notEmptyList.insertToIndex(oneDirectionNode, 1);
+        assertEquals(Arrays.asList("aa", "cc", "bb"), notEmptyList.toList());
+    }
+
+    @Test
+    public void test_insertToIndex__not_empty__last(){
+        OneDirectionNode oneDirectionNode = new OneDirectionNode("cc", null);
+        notEmptyList.insertToIndex(oneDirectionNode, 2);
+        assertEquals(Arrays.asList("aa", "bb", "cc"), notEmptyList.toList());
+    }
+
+    @Test
+    public void test_insertToIndex__empty() {
+
+        OneDirectionNode oneDirectionNode = new OneDirectionNode("cc", null);
+        assertThrows(RuntimeException.class, () -> notEmptyList.insertToIndex(oneDirectionNode, 100));
+    }
 }
