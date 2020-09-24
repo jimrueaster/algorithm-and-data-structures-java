@@ -42,6 +42,37 @@ public class OneDirectionLinkedList {
         }
     }
 
+    public void removeByIndex(int anIndex) {
+        int i = 0;
+        OneDirectionNode prevNode = head;
+        OneDirectionNode node = head.getNext();
+
+        if (anIndex < 0) {
+            throw new RuntimeException("index exceeded.");
+        }
+
+        if (null == head.getNext()) {
+            throw new RuntimeException("empty list");
+        }
+
+        for (; ; ) {
+            if (null == node) {
+                break;
+            }
+            if (i == anIndex) {
+                OneDirectionNode nextNode = node.getNext();
+                prevNode.setNext(nextNode);
+                break;
+            }
+            prevNode = node;
+            node = node.getNext();
+            i++;
+        }
+        if (i != anIndex) {
+            throw new RuntimeException("index exceeded.");
+        }
+    }
+
     public void removeLast() {
 
         OneDirectionNode node = head;

@@ -85,4 +85,29 @@ public class OneDirectionLinkedListTest {
         OneDirectionNode oneDirectionNode = new OneDirectionNode("cc", null);
         assertThrows(RuntimeException.class, () -> notEmptyList.insertToIndex(oneDirectionNode, 100));
     }
+
+    // ------------------------------------
+    //          removeByIndex
+    // ------------------------------------
+    @Test
+    public void test_removeByIndex__not_empty_list__remove_first (){
+        notEmptyList.removeByIndex(0);
+        assertEquals(Collections.singletonList("bb"), notEmptyList.toList());
+    }
+
+    @Test
+    public void test_removeByIndex__not_empty_list__not_remove_first(){
+        notEmptyList.removeByIndex(1);
+        assertEquals(Collections.singletonList("aa"), notEmptyList.toList());
+    }
+
+    @Test
+    public void test_removeByIndex__empty_list__index_too_large (){
+        assertThrows(RuntimeException.class, () -> emptyList.removeByIndex(100));
+    }
+
+    @Test
+    public void test_removeByIndex__empty_list__index_too_little (){
+        assertThrows(RuntimeException.class, () -> emptyList.removeByIndex(-1));
+    }
 }
