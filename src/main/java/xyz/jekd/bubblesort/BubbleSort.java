@@ -4,25 +4,25 @@ import java.util.Arrays;
 
 public class BubbleSort {
 
-    private void swap(String[] anArray, int i) {
+    private <T extends Comparable<T>> void swap(T[] anArray, int i) {
 
         int j = i + 1;
-        String tmp = anArray[i];
+        T tmp = anArray[i];
         anArray[i] = anArray[j];
         anArray[j] = tmp;
     }
 
-    public String[] sort(String[] anArray) {
+    public <T extends Comparable<T>> T[] sort(T[] anArray) {
 
-        String[] arrayForSort = Arrays.copyOf(anArray, anArray.length);
+        T[] arrayForSort = Arrays.copyOf(anArray, anArray.length);
 
         int len = arrayForSort.length;
         boolean flag;
         for (int i = 0; i < len - 1; i++) {
             flag = true;
             for (int j = 0; j < len - i - 1; j++) {
-                String a = arrayForSort[j];
-                String b = arrayForSort[j + 1];
+                T a = arrayForSort[j];
+                T b = arrayForSort[j + 1];
                 if (a.compareTo(b) > 0) {
                     swap(arrayForSort, j);
                     flag = false;
