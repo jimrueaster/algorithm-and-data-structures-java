@@ -72,17 +72,21 @@ public class OneDirectionLinkedListTest {
     //          insertToIndex
     // ------------------------------------
     @Test
-    public void test_insertToIndex__not_empty__middle(){
+    public void test_insertToIndex__not_empty__middle() {
+        int originalSize = notEmptyList.getSize();
         OneDirectionNode oneDirectionNode = new OneDirectionNode("cc", null);
         notEmptyList.insertToIndex(oneDirectionNode, 1);
         assertEquals(Arrays.asList("aa", "cc", "bb"), notEmptyList.toList());
+        assertEquals(originalSize + 1, notEmptyList.getSize());
     }
 
     @Test
-    public void test_insertToIndex__not_empty__last(){
+    public void test_insertToIndex__not_empty__last() {
+        int originalSize = notEmptyList.getSize();
         OneDirectionNode oneDirectionNode = new OneDirectionNode("cc", null);
         notEmptyList.insertToIndex(oneDirectionNode, 2);
         assertEquals(Arrays.asList("aa", "bb", "cc"), notEmptyList.toList());
+        assertEquals(originalSize + 1, notEmptyList.getSize());
     }
 
     @Test
@@ -96,15 +100,19 @@ public class OneDirectionLinkedListTest {
     //          removeByIndex
     // ------------------------------------
     @Test
-    public void test_removeByIndex__not_empty_list__remove_first (){
+    public void test_removeByIndex__not_empty_list__remove_first() {
+        int originalSize = notEmptyList.getSize();
         notEmptyList.removeByIndex(0);
         assertEquals(Collections.singletonList("bb"), notEmptyList.toList());
+        assertEquals(originalSize - 1, notEmptyList.getSize());
     }
 
     @Test
-    public void test_removeByIndex__not_empty_list__not_remove_first(){
+    public void test_removeByIndex__not_empty_list__not_remove_first() {
+        int originalSize = notEmptyList.getSize();
         notEmptyList.removeByIndex(1);
         assertEquals(Collections.singletonList("aa"), notEmptyList.toList());
+        assertEquals(originalSize - 1, notEmptyList.getSize());
     }
 
     @Test

@@ -40,6 +40,7 @@ public class OneDirectionLinkedList {
         if (i != anIndex) {
             throw new RuntimeException("index exceeded.");
         }
+        size++;
     }
 
     public void removeByIndex(int anIndex) {
@@ -71,6 +72,7 @@ public class OneDirectionLinkedList {
         if (i != anIndex) {
             throw new RuntimeException("index exceeded.");
         }
+        size--;
     }
 
     public void removeLast() {
