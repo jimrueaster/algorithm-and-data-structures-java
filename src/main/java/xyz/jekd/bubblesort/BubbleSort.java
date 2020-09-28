@@ -14,9 +14,13 @@ public class BubbleSort {
 
     public <T extends Comparable<T>> T[] sort(T[] anArray) {
 
-        T[] arrayForSort = Arrays.copyOf(anArray, anArray.length);
+        int len = anArray.length;
+        if (len <= 1) {
+            return anArray;
+        }
 
-        int len = arrayForSort.length;
+        T[] arrayForSort = Arrays.copyOf(anArray, len);
+
         boolean flag;
         for (int i = 0; i < len - 1; i++) {
             flag = true;

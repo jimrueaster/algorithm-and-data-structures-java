@@ -42,4 +42,17 @@ public class BubbleSortTest {
 
         assertArrayEquals(expect, sortedArr);
     }
+
+    // -----------------------------------
+    //            len = 1
+    // -----------------------------------
+    @Test
+    public void test_sort__len_one_String() {
+        String[] arr = {"a"};
+        String[] expect = {"a"};
+        BubbleSort bs = new BubbleSort();
+        String[] sortedArr = bs.sort(arr);
+
+        assertArrayEquals(expect, sortedArr);
+    }
 }
