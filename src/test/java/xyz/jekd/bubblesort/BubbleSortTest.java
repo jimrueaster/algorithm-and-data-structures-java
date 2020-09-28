@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BubbleSortTest {
 
+    // -----------------------------------
+    //           shuffled
+    // -----------------------------------
     @Test
     public void test_sort__shuffled_String() {
         String[] arr = {"a", "e", "d", "z", "w"};
@@ -22,6 +25,20 @@ public class BubbleSortTest {
         Integer[] expect = {1, 3 ,5, 24, 67};
         BubbleSort bs = new BubbleSort();
         Integer[] sortedArr = bs.sort(arr);
+
+        assertArrayEquals(expect, sortedArr);
+    }
+
+    // -----------------------------------
+    //            empty
+    // -----------------------------------
+
+    @Test
+    public void test_sort__empty_String() {
+        String[] arr = {};
+        String[] expect = {};
+        BubbleSort bs = new BubbleSort();
+        String[] sortedArr = bs.sort(arr);
 
         assertArrayEquals(expect, sortedArr);
     }
