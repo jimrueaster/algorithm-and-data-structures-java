@@ -51,6 +51,9 @@ public class OneDirectionLinkedListTest {
         assertEquals(2, notEmptyList.getSize());
     }
 
+    // ------------------------------------
+    //          removeLast
+    // ------------------------------------
     @Test
     public void test_removeLast__not_empty() {
         notEmptyList.removeLast();
@@ -65,6 +68,9 @@ public class OneDirectionLinkedListTest {
         assertThrows(RuntimeException.class, () -> emptyList.removeLast());
     }
 
+    // ------------------------------------
+    //          insertToIndex
+    // ------------------------------------
     @Test
     public void test_insertToIndex__not_empty__middle(){
         OneDirectionNode oneDirectionNode = new OneDirectionNode("cc", null);
