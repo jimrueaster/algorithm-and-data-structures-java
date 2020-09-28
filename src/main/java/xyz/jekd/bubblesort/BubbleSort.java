@@ -14,10 +14,9 @@ public class BubbleSort {
 
         int len = anArray.length;
         boolean flag;
-        do {
+        for (int i = 0; i < len - 1; i++) {
             flag = true;
-            for (int j = 0; j < len - 1; j++) {
-
+            for (int j = 0; j < len - i - 1; j++) {
                 String a = anArray[j];
                 String b = anArray[j + 1];
                 if (a.compareTo(b) > 0) {
@@ -25,6 +24,9 @@ public class BubbleSort {
                     flag = false;
                 }
             }
-        } while (!flag);
+            if (flag) {
+                break;
+            }
+        }
     }
 }
