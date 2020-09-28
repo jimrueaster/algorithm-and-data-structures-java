@@ -11,8 +11,8 @@ public class BubbleSortTest {
         String[] arr = {"a", "e", "d", "z", "w"};
         String[] expect = {"a", "d", "e", "w", "z"};
         BubbleSort bs = new BubbleSort();
-        bs.sort(arr);
+        String[] sortedArr = bs.sort(arr);
 
-        assertArrayEquals(expect, arr);
+        assertArrayEquals(expect, sortedArr);
     }
 }
