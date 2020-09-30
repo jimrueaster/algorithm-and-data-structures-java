@@ -19,6 +19,9 @@ public class InsertionSort {
                     break;
                 }
             }
+            if(insertToIndex < 0){
+                insertToIndex = 0;
+            }
             if (insertToIndex < rightBorder + 1) {
 
                 System.arraycopy(arrayForSort, insertToIndex, arrayForSort, insertToIndex + 1,

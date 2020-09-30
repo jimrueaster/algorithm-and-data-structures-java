@@ -43,4 +43,46 @@ public class InsertionSortTest {
 
         assertArrayEquals(expect, sortedArr);
     }
+
+    // -----------------------------------
+    //            empty
+    // -----------------------------------
+
+    @Test
+    public void test_sort__empty_String() {
+        String[] arr = {};
+        String[] expect = {};
+        BubbleSort bs = new BubbleSort();
+        String[] sortedArr = bs.sort(arr);
+
+        assertArrayEquals(expect, sortedArr);
+    }
+
+    // -----------------------------------
+    //            len = 1
+    // -----------------------------------
+    @Test
+    public void test_sort__len_one_String() {
+        String[] arr = {"a"};
+        String[] expect = {"a"};
+        BubbleSort bs = new BubbleSort();
+        String[] sortedArr = bs.sort(arr);
+
+        assertArrayEquals(expect, sortedArr);
+    }
+
+    // -----------------------------------
+    //            reverse
+    // -----------------------------------
+
+    @Test
+    public void test_sort__reverse() {
+        Integer[] arr = {5, 4, 3, 2, 1};
+        Integer[] expect = {1, 2, 3, 4, 5};
+
+        InsertionSort is = new InsertionSort();
+        Integer[] sortedArr = is.sort(arr);
+
+        assertArrayEquals(expect, sortedArr);
+    }
 }
