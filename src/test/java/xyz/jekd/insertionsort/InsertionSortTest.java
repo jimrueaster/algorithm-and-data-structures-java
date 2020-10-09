@@ -23,25 +23,31 @@ public class InsertionSortTest {
     }
 
     @Test
-    public void test_sort__shuffled_String2() {
-        InsertionSort is = new InsertionSort();
-        String[] arr = {"a", "e", "d", "z", "w"};
-        String[] expect = {"a", "d", "e", "w", "z"};
-
-        String[] movedArr = is.sort(arr);
-
-        assertArrayEquals(expect, movedArr);
-    }
-
-    @Test
     public void test_sort__shuffled_Integer() {
-        Integer[] arr = {1, 24, 3, 67, 5};
-        Integer[] expect = {1, 3, 5, 24, 67};
-
         InsertionSort is = new InsertionSort();
-        Integer[] sortedArr = is.sort(arr);
 
-        assertArrayEquals(expect, sortedArr);
+        Integer[] expect = {1, 3, 5};
+
+        Integer[] arr1 = {1, 3, 5};
+        Integer[] arr2 = {1, 5, 3};
+        Integer[] arr3 = {3, 1, 5};
+        Integer[] arr4 = {3, 5, 1};
+        Integer[] arr5 = {5, 1, 3};
+        Integer[] arr6 = {5, 3, 1};
+
+        Integer[] sortedArr1 = is.sort(arr1);
+        Integer[] sortedArr2 = is.sort(arr2);
+        Integer[] sortedArr3 = is.sort(arr3);
+        Integer[] sortedArr4 = is.sort(arr4);
+        Integer[] sortedArr5 = is.sort(arr5);
+        Integer[] sortedArr6 = is.sort(arr6);
+
+        assertArrayEquals(expect, sortedArr1);
+        assertArrayEquals(expect, sortedArr2);
+        assertArrayEquals(expect, sortedArr3);
+        assertArrayEquals(expect, sortedArr4);
+        assertArrayEquals(expect, sortedArr5);
+        assertArrayEquals(expect, sortedArr6);
     }
 
     // -----------------------------------
@@ -67,21 +73,6 @@ public class InsertionSortTest {
         String[] expect = {"a"};
         BubbleSort bs = new BubbleSort();
         String[] sortedArr = bs.sort(arr);
-
-        assertArrayEquals(expect, sortedArr);
-    }
-
-    // -----------------------------------
-    //            reverse
-    // -----------------------------------
-
-    @Test
-    public void test_sort__reverse() {
-        Integer[] arr = {5, 4, 3, 2, 1};
-        Integer[] expect = {1, 2, 3, 4, 5};
-
-        InsertionSort is = new InsertionSort();
-        Integer[] sortedArr = is.sort(arr);
 
         assertArrayEquals(expect, sortedArr);
     }
