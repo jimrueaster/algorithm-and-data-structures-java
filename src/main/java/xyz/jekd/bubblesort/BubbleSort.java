@@ -1,15 +1,14 @@
 package xyz.jekd.bubblesort;
 
+import xyz.jekd.util.Util;
+
 import java.util.Arrays;
 
 public class BubbleSort {
 
     private <T extends Comparable<T>> void swap(T[] anArray, int i) {
 
-        int j = i + 1;
-        T tmp = anArray[i];
-        anArray[i] = anArray[j];
-        anArray[j] = tmp;
+        Util.swap(anArray, i, i + 1);
     }
 
     public <T extends Comparable<T>> T[] sort(T[] anArray) {
