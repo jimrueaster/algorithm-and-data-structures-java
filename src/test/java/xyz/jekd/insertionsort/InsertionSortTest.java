@@ -1,7 +1,6 @@
 package xyz.jekd.insertionsort;
 
 import org.junit.jupiter.api.Test;
-import xyz.jekd.bubblesort.BubbleSort;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -58,7 +57,7 @@ public class InsertionSortTest {
     public void test_sort__empty_String() {
         String[] arr = {};
         String[] expect = {};
-        BubbleSort bs = new BubbleSort();
+        InsertionSort bs = new InsertionSort();
         String[] sortedArr = bs.sort(arr);
 
         assertArrayEquals(expect, sortedArr);
@@ -71,7 +70,7 @@ public class InsertionSortTest {
     public void test_sort__len_one_String() {
         String[] arr = {"a"};
         String[] expect = {"a"};
-        BubbleSort bs = new BubbleSort();
+        InsertionSort bs = new InsertionSort();
         String[] sortedArr = bs.sort(arr);
 
         assertArrayEquals(expect, sortedArr);
