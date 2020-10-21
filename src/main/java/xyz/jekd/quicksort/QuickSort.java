@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class QuickSort {
 
-    private int partition(Integer[] anArray, int p, int r) {
+    private <T extends Comparable<T>> int partition(T[] anArray, int p, int r) {
 
         // 索引 p 是这个小数组的起始索引
         // 索引 p 是被选取的分界点
@@ -16,7 +16,7 @@ public class QuickSort {
 
         // 索引 i 是未排序的那部分数组的"当前"索引
         for (int i = index; i <= r; i++) {
-            if (anArray[i] < anArray[p]) {
+            if (anArray[i].compareTo(anArray[p]) < 0) {
                 Util.swap(anArray, i, index);
                 index++;
             }
@@ -25,7 +25,7 @@ public class QuickSort {
         return index - 1;
     }
 
-    private Integer[] sortLittle(Integer[] anArray, int p, int r) {
+    private <T extends Comparable<T>> T[] sortLittle(T[] anArray, int p, int r) {
 
         if (p >= r) {
             return anArray;
@@ -38,9 +38,9 @@ public class QuickSort {
         return anArray;
     }
 
-    public Integer[] sort(Integer[] anArray) {
+    public <T extends Comparable<T>> T[] sort(T[] anArray) {
 
-        Integer[] arrayForSort = Arrays.copyOf(anArray, anArray.length);
+        T[] arrayForSort = Arrays.copyOf(anArray, anArray.length);
 
         if (arrayForSort.length <= 1) {
             return arrayForSort;

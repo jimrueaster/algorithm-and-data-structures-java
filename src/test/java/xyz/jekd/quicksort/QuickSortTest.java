@@ -1,6 +1,7 @@
 package xyz.jekd.quicksort;
 
 import org.junit.jupiter.api.Test;
+import xyz.jekd.selectionsort.SelectionSort;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -9,6 +10,18 @@ public class QuickSortTest {
     // -----------------------------------
     //           shuffled
     // -----------------------------------
+
+    @Test
+    public void test_sort__shuffled_String() {
+
+        SelectionSort is = new SelectionSort();
+        String[] arr = {"a", "z", "w", "e", "d", "t"};
+        String[] expect = {"a", "d", "e", "t", "w", "z"};
+
+        String[] movedArr = is.sort(arr);
+
+        assertArrayEquals(expect, movedArr);
+    }
 
     @Test
     public void test_sort__shuffled_Integer() {
@@ -30,19 +43,19 @@ public class QuickSortTest {
         Integer[] arr11 = {5, 1, 7, 3};
         Integer[] arr12 = {5, 3, 7, 1};
 
-        Integer[] arr13 = {1, 7,3,  5};
-        Integer[] arr14 = {1,7, 5,  3};
-        Integer[] arr15 = {3, 7,1,  5};
-        Integer[] arr16 = {3,7, 5,  1};
-        Integer[] arr17 = {5,7, 1,  3};
-        Integer[] arr18 = {5,7, 3,  1};
+        Integer[] arr13 = {1, 7, 3, 5};
+        Integer[] arr14 = {1, 7, 5, 3};
+        Integer[] arr15 = {3, 7, 1, 5};
+        Integer[] arr16 = {3, 7, 5, 1};
+        Integer[] arr17 = {5, 7, 1, 3};
+        Integer[] arr18 = {5, 7, 3, 1};
 
-        Integer[] arr19 = {7,1, 3,  5};
-        Integer[] arr20 = {7,1, 5,  3};
-        Integer[] arr21 = {7,3, 1,  5};
-        Integer[] arr22 = {7,3, 5,  1};
-        Integer[] arr23 = {7,5, 1,  3};
-        Integer[] arr24 = {7,5, 3,  1};
+        Integer[] arr19 = {7, 1, 3, 5};
+        Integer[] arr20 = {7, 1, 5, 3};
+        Integer[] arr21 = {7, 3, 1, 5};
+        Integer[] arr22 = {7, 3, 5, 1};
+        Integer[] arr23 = {7, 5, 1, 3};
+        Integer[] arr24 = {7, 5, 3, 1};
 
         Integer[] sortedArr1 = sort.sort(arr1);
         Integer[] sortedArr2 = sort.sort(arr2);
@@ -64,14 +77,14 @@ public class QuickSortTest {
         Integer[] sortedArr16 = sort.sort(arr16);
         Integer[] sortedArr17 = sort.sort(arr17);
         Integer[] sortedArr18 = sort.sort(arr18);
-        
+
         Integer[] sortedArr19 = sort.sort(arr19);
         Integer[] sortedArr20 = sort.sort(arr20);
         Integer[] sortedArr21 = sort.sort(arr21);
         Integer[] sortedArr22 = sort.sort(arr22);
         Integer[] sortedArr23 = sort.sort(arr23);
         Integer[] sortedArr24 = sort.sort(arr24);
-        
+
         assertArrayEquals(expect, sortedArr1);
         assertArrayEquals(expect, sortedArr2);
         assertArrayEquals(expect, sortedArr3);
@@ -92,7 +105,7 @@ public class QuickSortTest {
         assertArrayEquals(expect, sortedArr16);
         assertArrayEquals(expect, sortedArr17);
         assertArrayEquals(expect, sortedArr18);
-        
+
         assertArrayEquals(expect, sortedArr19);
         assertArrayEquals(expect, sortedArr20);
         assertArrayEquals(expect, sortedArr21);
