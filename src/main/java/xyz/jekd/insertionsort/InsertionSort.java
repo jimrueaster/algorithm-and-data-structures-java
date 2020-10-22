@@ -8,26 +8,18 @@ public class InsertionSort {
 
         T[] arrayForSort = Arrays.copyOf(anArray, anArray.length);
 
-        // i is the Sorted Part Right Border
-        for (int rightBorder = 0; rightBorder < arrayForSort.length - 1; rightBorder++) {
+        for (int toSortIdx = 1; toSortIdx < arrayForSort.length; toSortIdx++) {
 
-            T eleWaitingToInsert = arrayForSort[rightBorder + 1];
+            T toSortVal = arrayForSort[toSortIdx];
             int insertToIndex;
-            for (insertToIndex = rightBorder + 1; insertToIndex >= 0; insertToIndex--) {
-                if (eleWaitingToInsert.compareTo(arrayForSort[insertToIndex]) > 0) {
-                    insertToIndex++;
+            for (insertToIndex = toSortIdx - 1; insertToIndex >= 0; insertToIndex--) {
+                if (toSortVal.compareTo(arrayForSort[insertToIndex]) >= 0) {
                     break;
                 }
+                arrayForSort[insertToIndex + 1] = arrayForSort[insertToIndex];
             }
-            if(insertToIndex < 0){
-                insertToIndex = 0;
-            }
-            if (insertToIndex < rightBorder + 1) {
 
-                System.arraycopy(arrayForSort, insertToIndex, arrayForSort, insertToIndex + 1,
-                        rightBorder - insertToIndex + 1);
-                arrayForSort[insertToIndex] = eleWaitingToInsert;
-            }
+            arrayForSort[insertToIndex + 1] = toSortVal;
         }
 
         return arrayForSort;
