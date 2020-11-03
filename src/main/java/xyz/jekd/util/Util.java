@@ -33,4 +33,28 @@ public class Util {
         }
         return aSrcArray[minEleIdx];
     }
+
+    public static Integer accumulateArr(Integer[] anArr, int fromIdx, int toIdx) {
+
+        Integer result = 0;
+        assert fromIdx <= toIdx;
+
+        for (int i = fromIdx; i <= toIdx; i++) {
+            if (null == anArr[i]) {
+                continue;
+            }
+            result += anArr[i];
+        }
+        return result;
+    }
+
+    public static Integer[] accumulateCntArr(Integer[] aCntArr) {
+
+        Integer[] result = new Integer[aCntArr.length];
+
+        for (int i = 0; i < aCntArr.length; i++) {
+            result[i] = accumulateArr(aCntArr, 0, i);
+        }
+        return result;
+    }
 }

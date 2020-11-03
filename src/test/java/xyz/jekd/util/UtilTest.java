@@ -2,8 +2,7 @@ package xyz.jekd.util;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UtilTest {
 
@@ -41,5 +40,23 @@ public class UtilTest {
         assertThrows(AssertionError.class, () -> {
             Util.min(srcArr);
         });
+    }
+
+    @Test
+    public void test_accumulateArr__normal() {
+
+        Integer[] srcArr = {1, 2, 3, 4, 5, 6};
+
+        assertEquals(1, Util.accumulateArr(srcArr, 0, 0));
+        assertEquals(3, Util.accumulateArr(srcArr, 0, 1));
+        assertEquals(5, Util.accumulateArr(srcArr, 1, 2));
+    }
+
+    @Test
+    public void test_accumulateCntArr__normal() {
+
+        Integer[] srcArr = {1, 2, 3, 4, 5, 6};
+
+        assertArrayEquals(new Integer[]{1, 3, 6, 10, 15, 21}, Util.accumulateCntArr(srcArr));
     }
 }
